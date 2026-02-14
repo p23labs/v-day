@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video 🎥</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="hearts-bg"></div>
+
+    <div class="video-page-container">
+        <a href="yes.html" class="back-button">← Back</a>
+        
+        <h1 class="video-title">Here's something special for you 🎥</h1>
+        
+        <div class="video-wrapper">
+            <video controls autoplay style="width: 100%; max-width: 500px; border-radius: 15px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);">
+                <source src="music/videoc.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <audio id="bg-music" loop>
+        <source src="music/Elvis_Presle.mp3" type="audio/mpeg">
+    </audio>
+
+    <button id="music-toggle" onclick="toggleMusic()" title="Toggle music">🔊</button>
+
+    <script src="yes-script.js"></script>
+    <script>
+        // Smooth scroll to video on page load
+        window.addEventListener('load', () => {
+            const videoWrapper = document.querySelector('.video-wrapper');
+            if (videoWrapper) {
+                setTimeout(() => {
+                    videoWrapper.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }, 500);
+            }
+        });
+
+        // Back button smooth scroll
+        document.querySelector('.back-button').addEventListener('click', (e) => {
+            // Allow default navigation but optionally add a smooth effect
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
